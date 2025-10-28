@@ -8,10 +8,16 @@ class UserRepositoryImpl implements UserRepositoryInterface {
 
   UserRepositoryImpl(this.dataSource);
 
+  // @override
+  // Future<List<User>> fetchUsers() async {
+  //   final usersMapList = await dataSource.fetchUsers(results: 10);
+  //   return usersMapList.map((json) => User.fromJson(json)).toList();
+  // }
+
   @override
   Future<List<User>> fetchUsers() async {
-    final usersMapList = await dataSource.fetchUsers(results: 10);
-    return usersMapList.map((json) => User.fromJson(json)).toList();
+    final usersJson = await dataSource.fetchUsers();
+    return usersJson.map((e) => User.fromJson(e)).toList();
   }
 
   @override

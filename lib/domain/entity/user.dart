@@ -1,22 +1,64 @@
+import 'package:hive/hive.dart';
+
+part 'user.g.dart';
+
+@HiveType(typeId: 0)
 class User {
+  @HiveField(0)
   final String uuid;
+
+  @HiveField(1)
   final String gender;
+
+  @HiveField(2)
   final String title;
+
+  @HiveField(3)
   final String firstName;
+
+  @HiveField(4)
   final String lastName;
+
+  @HiveField(5)
   final String email;
+
+  @HiveField(6)
   final String phone;
+
+  @HiveField(7)
   final String cell;
+
+  @HiveField(8)
   final String country;
+
+  @HiveField(9)
   final String state;
+
+  @HiveField(10)
   final String city;
+
+  @HiveField(11)
   final String streetName;
+
+  @HiveField(12)
   final int streetNumber;
+
+  @HiveField(13)
   final String postcode;
+
+  @HiveField(14)
   final String pictureLarge;
+
+  @HiveField(15)
   final String pictureMedium;
+
+  @HiveField(16)
   final String pictureThumbnail;
+
+  @HiveField(17)
   final DateTime dateOfBirth;
+
+  @HiveField(18)
   final int age;
 
   User({
