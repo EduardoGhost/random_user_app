@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:hive/hive.dart';
 import 'package:random_user_app/data/datasources/user_data_source.dart';
+import 'package:random_user_app/presentation/viewmodels/views/persisted_page.dart';
 
 import '../../../data/repositories/user_repository_impl.dart';
 import '../user_viewmodel.dart';
@@ -40,6 +41,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Random Users'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.storage),
+            onPressed: () {
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => PersistedPage(viewModel: viewModel),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Observer(
         builder: (_) {
@@ -85,10 +100,10 @@ class _HomePageState extends State<HomePage> {
           final box = await Hive.openBox('users');
           await box.clear();
           viewModel.persistedUsers.clear();
-          print('Banco limpo!');
+          print('Banco Hive limpo!');
         },
         child: const Icon(Icons.delete),
-        tooltip: 'Limpar Hive',
+        tooltip: 'Limpar banco Hive',
       ),
     );
   }

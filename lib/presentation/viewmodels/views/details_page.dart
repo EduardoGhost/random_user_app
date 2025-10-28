@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:random_user_app/utils/date_formater.dart';
 import '../../../domain/entity/user.dart';
 import '../user_viewmodel.dart';
 
@@ -23,10 +24,13 @@ class DetailsPage extends StatelessWidget {
 
             return ListView(
               children: [
-              CircleAvatar(
-              radius: 70,
-              backgroundImage: NetworkImage(user.pictureMedium),
-            ),
+                Image.network(
+                  user.pictureLarge,
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.contain,
+                )
+                ,
                 const SizedBox(height: 16),
                 Text('Name: ${user.title} ${user.firstName} ${user.lastName}'),
                 Text('Email: ${user.email}'),
@@ -37,7 +41,8 @@ class DetailsPage extends StatelessWidget {
                 Text('City: ${user.city}'),
                 Text('Street: ${user.streetName}, ${user.streetNumber}'),
                 Text('Postcode: ${user.postcode}'),
-                Text('Date of Birth: ${user.dateOfBirth.toLocal()}'),
+                Text('Data de nascimento: ${DateFormater.formatDate(user.dateOfBirth)}'),
+               // Text('Date of Birth: ${user.dateOfBirth.toLocal()}'),
                 Text('Age: ${user.age}'),
                 const SizedBox(height: 20),
                 ElevatedButton(
