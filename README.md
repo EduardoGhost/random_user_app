@@ -32,7 +32,7 @@ E tem como objetivo exibir informações de usuários aleatórios. Permitindo sa
 
 ---
 
-## Como Rodar
+## Como Rodar...
 
 ### Pré-requisitos
 - Flutter >= 3.x
@@ -43,3 +43,8 @@ E tem como objetivo exibir informações de usuários aleatórios. Permitindo sa
 ### Passos
 1. Clone o repositório:
  - git clone <https://github.com/EduardoGhost/random_user_app>
+   
+ - Acesse a pasta do projeto:
+ - cd random_user_app
+ - flutter pub run build_runner build --delete-conflicting-outputs
+ - flutter run
