@@ -7,10 +7,11 @@ E tem como objetivo exibir informações de usuários aleatórios. Permitindo sa
 
 - Flutter & Dart – desenvolvimento mobile multiplataforma.
 - MobX – gerenciamento de estado reativo (MVVM).
-- Hive – persistência local.
-- http – para consumo da API.
-- build_runner – geração de código (MobX).
 - observer – para atualizar a UI automaticamente com MobX.
+- Hive – persistência local.
+- Repository Strategy - desacoplar a lógica de negócios do acesso a dados.
+- http – para consumo da API.
+
 ---
 ## Funcionalidades
 
@@ -42,6 +43,7 @@ E tem como objetivo exibir informações de usuários aleatórios. Permitindo sa
 
 ### Passos
 1. Clone o repositório:
+ ```bash
  - git clone <https://github.com/EduardoGhost/random_user_app>
    
  - Acesse a pasta do projeto:
